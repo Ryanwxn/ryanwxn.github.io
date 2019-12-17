@@ -15,7 +15,7 @@
 <meta property="og:description" content="概论 拟阵是一种数学工具，可以用来证明贪心算法的正确性。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-12-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-12-17T15:34:28.820Z">
+<meta property="article:modified_time" content="2019-12-17T15:41:56.101Z">
 <meta property="article:author" content="LCuter">
 <meta property="article:tag" content="数学理论基础">
 <meta name="twitter:card" content="summary">
@@ -93,7 +93,7 @@
 <p>拟阵是一种数学工具，可以用来证明贪心算法的正确性。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="定义与定理"><a href="#定义与定理" class="headerlink" title="定义与定理"></a>定义与定理</h2><blockquote>
+<h2 id="定义与定理"><a href="#定义与定理" class="headerlink" title="定义与定理"></a>定义与定理</h2><hr>
 <p>$\text{Def 1.}$ 对于一个二元组 $M=(S,L)$，若 $M$ 满足</p>
 <ul>
 <li>$S$ 是一个有限集</li>
@@ -101,35 +101,35 @@
 <li>$\forall A\subseteq B,B\in L\Rightarrow A\in L$</li>
 </ul>
 <p>则称 $M$ 为子集系统</p>
-</blockquote>
-<p>_如果你对最后一条有符号上的疑问 ，你可能需要再注意下第二条中 $L$ 的定义_</p>
-<blockquote>
+<p><em>如果你对最后一条有符号上的疑问 ，你可能需要再注意下第二条中 $L$ 的定义</em></p>
+<hr>
 <p>$\text{Def 2.}$ 对于一个子集系统 $M=(S,L)$，若 $M$ 满足</p>
 <ul>
 <li><p>$\forall A,B\in L,| A| &lt; |B|,\exists x\in B,x\notin A,s.t.A\cup\{x\}\in L$</p>
 <p>则称 $M$ 为拟阵</p>
 </li>
 </ul>
+<hr>
 <p>$\text{Def 3.} $ 对于一个拟阵 $M=(S,L)$，若 $A\in L$，则称 $A$ 为独立集</p>
+<hr>
 <p>$\text{Def 4.}$ 对于一个独立集 $A$，若</p>
 <ul>
-<li><p>$\exists x\in S,s.t. x\notin A,A\cup\{x\}\in L$</p>
-<p>则称 $A$ 是可拓展的</p>
-</li>
+<li>$\exists x\in S,s.t. x\notin A,A\cup\{x\}\in L$</li>
 </ul>
+<p>则称 $A$ 是可拓展的</p>
 <p>若一个独立集 $A$ 不可拓展，则称 $A$ 是一个极大独立集</p>
+<hr>
 <p>$\text{Theorem 1}$ 同一拟阵的极大独立集大小相同</p>
-<p>$\text{Proof}$ 考虑反证法，假设</p>
-<p>$\exists A,B$ 为同一拟阵的极大独立集，$|A|&lt;|B|$，由拟阵的定义得 $A$ 是可拓展的，矛盾，证毕</p>
+<p>$\text{Proof}$ 考虑反证法，假设$\exists A,B$ 为同一拟阵的极大独立集，$|A|&lt;|B|$，由拟阵的定义得 $A$ 是可拓展的，矛盾，证毕</p>
+<hr>
 <p>$\text{Def 5.}$ 对于一个拟阵  $M=(S,L)$，我们给 $\forall x\in S$ 赋一个权值 $w(x)$，一个集合 $A\in S$ 的权值 $w(A)=\sum_{x\in A} w(x)$，那么称权值最大的独立集为权值最大独立集，一个显然的事实是权值最大独立集一定是一个极大独立集</p>
-</blockquote>
 <h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>接下来我们将探讨拟阵的应用。</p>
 <p>先考虑对于一个给定的拟阵 $M=(S,L)$ 和权值函数 $w(x)$，如何求出该拟阵的一个权值最大独立集。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://ryanwxn.github.io/2019/12/17/%E6%8B%9F%E9%98%B5/" data-id="ck4a12ra90000nsux6x435ppk" class="article-share-link">Share</a>
+      <a data-url="http://ryanwxn.github.io/2019/12/17/%E6%8B%9F%E9%98%B5/" data-id="ck4a1c7e50001ugux3j2iee13" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/" rel="tag">数学理论基础</a></li></ul>
@@ -140,10 +140,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2019/12/17/First/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          The first article
+        
+      </div>
+    </a>
   
-    <a href="/2019/12/17/First/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2019/12/17/%E6%9C%80%E7%9F%AD%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">The first article</div>
+      <div class="article-nav-title">最短路</div>
     </a>
   
 </nav>
@@ -194,11 +203,11 @@
       <ul>
         
           <li>
-            <a href="/2019/12/17/%E6%8B%9F%E9%98%B5/">拟阵</a>
+            <a href="/2019/12/17/First/">The first article</a>
           </li>
         
           <li>
-            <a href="/2019/12/17/First/">The first article</a>
+            <a href="/2019/12/17/%E6%8B%9F%E9%98%B5/">拟阵</a>
           </li>
         
           <li>
