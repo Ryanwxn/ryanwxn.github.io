@@ -5,14 +5,19 @@
   
 
   
-  <title>Archives: 2019 | LCuter&#39;s Blog</title>
+  <title>最短路 | LCuter&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LCuter&#39;s Blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;ryanwxn.github.io&#x2F;archives&#x2F;2019&#x2F;index.html">
+  <meta name="description" content="最短路概论 本文着重讲述最短路算法，并基于经典例题讲解建图技巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最短路">
+<meta property="og:url" content="http:&#x2F;&#x2F;ryanwxn.github.io&#x2F;2019&#x2F;12&#x2F;17&#x2F;%E6%9C%80%E7%9F%AD%E8%B7%AF&#x2F;index.html">
 <meta property="og:site_name" content="LCuter&#39;s Blog">
+<meta property="og:description" content="最短路概论 本文着重讲述最短路算法，并基于经典例题讲解建图技巧">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-12-17T15:07:53.763Z">
 <meta property="article:author" content="LCuter">
+<meta property="article:tag" content="最短路">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="LCuter&#39;s Blog" type="application/atom+xml">
@@ -62,78 +67,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/12/17/First/" class="archive-article-date">
-  <time datetime="2019-12-16T16:00:00.000Z" itemprop="datePublished">Dec 17</time>
+        <section id="main"><article id="post-最短路" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/17/%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="article-date">
+  <time datetime="2019-12-16T16:00:00.000Z" itemprop="datePublished">2019-12-17</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/17/First/">The first article</a>
+    <h1 class="article-title" itemprop="name">
+      最短路
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/12/17/%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="archive-article-date">
-  <time datetime="2019-12-16T16:00:00.000Z" itemprop="datePublished">Dec 17</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/17/%E6%9C%80%E7%9F%AD%E8%B7%AF/">最短路</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/12/17/%E6%8B%9F%E9%98%B5/" class="archive-article-date">
-  <time datetime="2019-12-16T16:00:00.000Z" itemprop="datePublished">Dec 17</time>
-</a>
+        <h1 id="最短路"><a href="#最短路" class="headerlink" title="最短路"></a>最短路</h1><h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><blockquote>
+<p>本文着重讲述最短路算法，并基于经典例题讲解建图技巧</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h2><p>最短路分为单源最短路和全源最短路。单源最短路指求出一个点到其它点的最短路，而全源最短路指求出所有点对间的全源最短路。通常题目不会要求你单纯地去求最短路，而是要求你通过一定技巧将题目抽象成图论模型，或者优化建图获得更优的复杂度。为了方便，下文将单源最短路中的 <code>单源</code> 成为 <code>源点</code>。</p>
+<h2 id="算法基础"><a href="#算法基础" class="headerlink" title="算法基础"></a>算法基础</h2><h3 id="text-Dijstra"><a href="#text-Dijstra" class="headerlink" title="$\text{Dijstra}$"></a>$\text{Dijstra}$</h3><h5 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h5><p> $\text{Dijstra}$ 可以在非负边权图上求出单源最短路，平凡的做法可以做到 $O(n^2)$，实际上使用堆优化可以做到 $O((n+m)\log n)$。</p>
+<h5 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h5><p>$\text{Dijstra}$ 本质上是一个贪心算法，我们维护一个已经确定最短路的点集，同时维护源点到其它点的最短路 $d_i$。我们每次选出一个未在我们所维护的点集中且 $d$ 值的点，然后判断这个点的 $d$ 值能否和与该点相邻的边一起使得与该点相邻的点的 $d$ 值变小，依次进行更新。当所有点都在我们所维护的点集时算法结束，此时 $d_i$ 即为所求。</p>
+<h5 id="正确性"><a href="#正确性" class="headerlink" title="正确性"></a>正确性</h5><h3 id="text-Bellman-ford-rightarrow-text-SPFA"><a href="#text-Bellman-ford-rightarrow-text-SPFA" class="headerlink" title="$\text{Bellman-ford}\rightarrow \text{SPFA}$"></a>$\text{Bellman-ford}\rightarrow \text{SPFA}$</h3>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/17/%E6%8B%9F%E9%98%B5/">拟阵</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ryanwxn.github.io/2019/12/17/%E6%9C%80%E7%9F%AD%E8%B7%AF/" data-id="ck4a050qc00016wux73637ufk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" rel="tag">最短路</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/17/First/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          The first article
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/12/17/%E6%8B%9F%E9%98%B5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">拟阵</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
